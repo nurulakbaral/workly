@@ -1,12 +1,12 @@
 {
-  "name": "workly-app",
+  "name": "@workly/app",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "run:local:app": "react-router dev",
+    "typecheck:local:app": "react-router typegen && tsc",
+    "build:prod:app": "react-router build",
+    "start:prod:app": "react-router-serve ./build/server/index.js"
   },
   "dependencies": {
     "@react-router/node": "7.13.2",

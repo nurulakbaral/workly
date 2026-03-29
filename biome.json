@@ -1,34 +1,85 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.4.9/schema.json",
-	"vcs": {
-		"enabled": true,
-		"clientKind": "git",
-		"useIgnoreFile": true
-	},
-	"files": {
-		"ignoreUnknown": false
-	},
-	"formatter": {
-		"enabled": true,
-		"indentStyle": "tab"
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "double"
-		}
-	},
-	"assist": {
-		"enabled": true,
-		"actions": {
-			"source": {
-				"organizeImports": "on"
-			}
-		}
-	}
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**", "!**/node_modules", "!**/dist", "!**/.next", "!**/templates", "!**/*.html", "!**/globals.css"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120
+  },
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "next": "all",
+      "react": "all",
+      "test": "all"
+    },
+    "rules": {
+      "recommended": true,
+      "security": {
+        "noDangerouslySetInnerHtml": "info"
+      },
+      "a11y": {
+        "noStaticElementInteractions": "info",
+        "useKeyWithClickEvents": "info",
+        "useAltText": "warn",
+        "useMediaCaption": "warn",
+        "noSvgWithoutTitle": "warn",
+        "useValidAnchor": "warn"
+      },
+      "complexity": {
+        "noBannedTypes": "info",
+        "noUselessFragments": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "info",
+        "useUniqueElementIds": "info",
+        "useExhaustiveDependencies": "warn",
+        "noNestedComponentDefinitions": "warn"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "info",
+        "noShadowRestrictedNames": "info",
+        "noShorthandPropertyOverrides": "info"
+      }
+    }
+  },
+  "css": {
+    "formatter": { "enabled": true, "quoteStyle": "single" },
+    "parser": { "tailwindDirectives": true }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded",
+      "trailingCommas": "all",
+      "quoteStyle": "double",
+      "jsxQuoteStyle": "double",
+      "lineWidth": 120,
+      "indentStyle": "space",
+      "indentWidth": 2
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  }
 }
