@@ -4,9 +4,11 @@
   "description": "Workly App",
   "scripts": {
     "workly-app:run:local:app": "pnpm run --filter @workly/app run:local:app",
+    "workly-app:run:local:desktop": "pnpm run --filter @workly/app run:local:desktop",
     "workly-app:typecheck:local:app": "pnpm run --filter @workly/app typecheck:local:app",
     "workly-app:build:prod:app": "pnpm run --filter @workly/app build:prod:app",
     "workly-app:start:prod:app": "pnpm run --filter @workly/app start:prod:app",
+    "workly-app:build:prod:desktop": "pnpm run --filter @workly/app build:prod:desktop",
     "prepare": "husky"
   },
   "keywords": [],

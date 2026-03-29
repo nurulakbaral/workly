@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "run:local:app": "react-router dev",
+    "run:local:desktop": "tauri dev",
     "typecheck:local:app": "react-router typegen && tsc",
     "build:prod:app": "react-router build",
+    "build:prod:desktop": "tauri build",
     "start:prod:app": "react-router-serve ./build/server/index.js"
   },
   "dependencies": {
